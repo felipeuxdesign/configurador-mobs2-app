@@ -1,0 +1,3 @@
+/* a tela de trás do aviso do Android (telas/aviso.jsx): a tela inteira, como a tela que ela é, parada e inerte */
+.aviso-atras { position: absolute; inset: 0; display: flex; flex-direction: column; }
+.aviso-atras > * { flex: 1; min-height: 0; }
