@@ -1,0 +1,106 @@
+/* O aviso do Android (decisões 78 e 80, folha 11): cenário do sistema. Cada medida e cada cor vêm de
+   05-recursos/sistema/aviso-do-android.css (as do Android, nos dois temas); no cartão, o ícone do app, colorido,
+   o mesmo nos dois temas e na falha. A fonte é a do sistema, a Roboto */
+
+.sis-icone { display: block; line-height: 0; }
+.sis-icone > svg { display: block; width: 100%; height: 100%; }
+
+/* o ícone do app no recorte redondo do celular: o fundo e a frente do adaptável, um por cima do outro, no
+   canto · 40 no recolhido, 28 no aberto */
+.sis-icone-do-app {
+  position: relative; display: block; flex-shrink: 0; overflow: hidden; border-radius: 50%;
+  width: var(--sis-icone-do-app); height: var(--sis-icone-do-app);
+}
+.sis-icone-do-app > svg { position: absolute; left: 0; top: 0; display: block; width: 100%; height: 100%; }
+.sis-icone-do-app-aberto { width: var(--sis-icone-do-app-aberto); height: var(--sis-icone-do-app-aberto); }
+
+/* a seta de abrir ou fechar, na pílula */
+.sis-seta {
+  width: var(--sis-pilula-largura); height: var(--sis-pilula-altura); border-radius: var(--sis-pilula-canto); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center; background: var(--sis-pilula); color: var(--sis-titulo);
+}
+.sis-seta > svg { width: var(--sis-chevron); height: var(--sis-chevron); stroke-width: 2.4; }
+
+/* o cartão do Android */
+.sis-aviso {
+  box-sizing: border-box; background: var(--sis-cartao); border-radius: var(--sis-cartao-canto);
+  font-family: var(--sis-fonte); color: var(--sis-titulo);
+}
+
+/* recolhido: o ícone do app, as duas linhas e a seta, a 12 um do outro */
+.sis-aviso-recolhido { padding: var(--sis-cartao-respiro); display: flex; align-items: center; gap: var(--e-12); }
+.sis-aviso-por-cima {
+  position: absolute; left: var(--sis-aviso-borda); right: var(--sis-aviso-borda); top: var(--sis-aviso-topo);
+  z-index: var(--sis-camada); box-shadow: var(--sis-sombra);
+}
+.sis-aviso-linhas { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: var(--e-2); }
+.sis-aviso-titulo, .sis-aviso-texto { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sis-aviso-titulo { font-size: var(--sis-titulo-tam); line-height: var(--sis-titulo-linha); }
+.sis-aviso-titulo-nome { font-weight: 500; color: var(--sis-titulo); }
+.sis-aviso-hora { color: var(--sis-texto); }
+.sis-aviso-texto { font-size: var(--sis-texto-tam); line-height: var(--sis-texto-linha); color: var(--sis-texto); }
+
+/* aberto: a cabeça (o ícone do app, o app e a hora, a seta), o corpo a 38 da esquerda e a ação a 26 */
+.sis-aviso-aberto { padding: var(--sis-aberto-respiro); display: flex; flex-direction: column; gap: var(--e-10); }
+.sis-aviso-cabeca { display: flex; align-items: center; gap: var(--e-10); }
+.sis-aviso-app { flex: 1; min-width: 0; font-size: var(--sis-app-tam); line-height: var(--sis-app-linha); color: var(--sis-texto); }
+.sis-aviso-corpo { display: flex; flex-direction: column; gap: var(--e-2); padding-left: var(--sis-aberto-recuo); }
+.sis-aviso-titulo-aberto { font-size: var(--sis-titulo-aberto-tam); line-height: var(--sis-titulo-aberto-linha); font-weight: 500; color: var(--sis-titulo); }
+.sis-aviso-texto-aberto { font-size: var(--sis-texto-tam); line-height: var(--sis-texto-linha); color: var(--sis-texto); }
+.sis-aviso-acoes { display: flex; padding-left: var(--sis-acao-recuo); }
+.sis-aviso-acao {
+  height: var(--sis-acao-altura); padding: 0 var(--sis-acao-respiro); border-radius: calc(var(--sis-acao-altura) / 2);
+  display: flex; align-items: center; font-size: var(--sis-texto-tam); font-weight: 500; color: var(--sis-ligado);
+}
+
+/* a gaveta, com o app fechado: a tela inteira, a barra do sistema sobre o fundo dela */
+.sis-gaveta {
+  position: absolute; inset: 0; display: flex; flex-direction: column; background: var(--sis-gaveta);
+  color: var(--sis-titulo); font-family: var(--sis-fonte); font-variant-numeric: normal;
+}
+.sis-gaveta .ds-barra-sistema { background: transparent; }
+.sis-gaveta-miolo { flex: 1; display: flex; flex-direction: column; gap: var(--e-12); padding: var(--sis-gaveta-respiro); box-sizing: border-box; }
+.sis-gaveta-cenario { display: flex; flex-direction: column; gap: var(--e-12); }
+.sis-gaveta-data { font-size: var(--sis-texto-tam); line-height: var(--sis-texto-linha); color: var(--sis-texto); padding: var(--sis-data-respiro); }
+.sis-gaveta-blocos { display: grid; grid-template-columns: 1fr 1fr; gap: var(--e-8); }
+.sis-bloco {
+  height: var(--sis-bloco-altura); border-radius: var(--sis-bloco-canto); background: var(--sis-pilula); color: var(--sis-titulo);
+  display: flex; align-items: center; gap: var(--e-10); padding: 0 var(--sis-cartao-respiro); box-sizing: border-box;
+}
+.sis-bloco-ligado { background: var(--sis-ligado); color: var(--sis-ligado-nome); }
+.sis-bloco-icone { width: var(--sis-bloco-icone); height: var(--sis-bloco-icone); flex-shrink: 0; stroke-width: 2.2; }
+.sis-bloco-textos { display: flex; flex-direction: column; min-width: 0; }
+.sis-bloco-nome { font-size: var(--sis-bloco-nome-tam); line-height: var(--sis-bloco-nome-linha); font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sis-bloco-estado { font-size: var(--sis-bloco-estado-tam); line-height: var(--sis-bloco-estado-linha); color: var(--sis-ligado-estado); }
+.sis-gaveta-brilho { height: var(--sis-brilho-altura); border-radius: var(--sis-brilho-canto); background: var(--sis-pilula); position: relative; overflow: hidden; }
+/* a folga de 4 entre o brilho e o aviso, com os 12 de cada lado */
+.sis-gaveta-folga { height: var(--sis-depois-do-brilho); }
+.sis-gaveta-brilho-cheio {
+  position: absolute; left: 0; top: 0; bottom: 0; width: var(--sis-brilho); border-radius: var(--sis-brilho-canto);
+  background: var(--sis-ligado); color: var(--sis-ligado-nome); display: flex; align-items: center; padding-left: var(--sis-cartao-respiro); box-sizing: border-box;
+}
+.sis-gaveta-brilho-icone { width: var(--sis-brilho-icone); height: var(--sis-brilho-icone); stroke-width: 2.2; }
+.sis-gaveta-botoes { display: flex; justify-content: space-between; }
+.sis-gaveta-botao {
+  height: var(--sis-gaveta-botao-altura); padding: 0 var(--e-16); border-radius: var(--sis-gaveta-botao-canto); background: var(--sis-pilula);
+  display: flex; align-items: center; font-size: var(--sis-texto-tam); font-weight: 500; color: var(--sis-titulo);
+}
+
+/* o pedido de permissão: o véu do sistema sobre a tela inteira, inclusive a barra e a pílula */
+.sis-pedido {
+  position: absolute; inset: 0; z-index: var(--sis-camada); background: var(--sis-veu);
+  display: flex; align-items: center; justify-content: center;
+}
+.sis-pedido-dialogo {
+  width: var(--sis-dialogo-largura); box-sizing: border-box; background: var(--sis-dialogo); border-radius: var(--sis-dialogo-canto);
+  padding: var(--sis-dialogo-respiro); display: flex; flex-direction: column; align-items: center; gap: var(--e-16);
+  font-family: var(--sis-fonte);
+}
+.sis-pedido-sino { width: var(--sis-sino); height: var(--sis-sino); color: var(--sis-ligado); }
+.sis-pedido-pergunta { font-size: var(--sis-pergunta-tam); line-height: var(--sis-pergunta-linha); color: var(--sis-titulo); text-align: center; }
+.sis-pedido-pergunta b { font-weight: 500; }
+.sis-pedido-botoes { align-self: stretch; display: flex; flex-direction: column; gap: var(--e-8); margin-top: var(--e-4); }
+.sis-pedido-botao {
+  height: var(--sis-botao-altura); border-radius: var(--sis-botao-canto); background: var(--sis-botao); color: var(--sis-botao-texto);
+  font-size: var(--sis-botao-tam); font-weight: 500; display: flex; align-items: center; justify-content: center;
+}

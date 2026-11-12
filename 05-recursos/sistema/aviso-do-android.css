@@ -1,0 +1,86 @@
+/* O aviso do Android (decisões 78 e 80, folha 11): cenário do sistema, como a barra, a pílula e o teclado
+   (lei 22). O app de verdade não desenha nada disto: quem desenha é o Android. As cores e as medidas são as do
+   sistema (Material 3), não tokens do app, e moram aqui, ao lado dos desenhos da barra e do teclado, um lugar só,
+   como diz o LEIA-ME desta pasta · no cartão vai o ícone do app, colorido, dos arquivos de
+   05-recursos/marca/icone-do-app/, e nenhuma cor do app · a fonte é a Roboto (05-recursos/fontes/roboto.css) */
+:root {
+  --sis-fonte: Roboto, system-ui, sans-serif;
+  --sis-camada: 3;                  /* por cima de tudo o que o app desenha e da pílula (--camada-sistema, 2) */
+
+  /* as cores do escuro do sistema */
+  --sis-gaveta: #141218;            /* o fundo da gaveta */
+  --sis-cartao: #2B2930;            /* o cartão do aviso */
+  --sis-dialogo: #2B2930;           /* o diálogo do pedido */
+  --sis-titulo: #E6E0E9;            /* o título, os nomes, o chevron */
+  --sis-texto: #CAC4D0;             /* o texto, o · agora, a data */
+  --sis-pilula: #36343B;            /* a pílula da seta, os blocos desligados, o brilho, o Gerenciar */
+  --sis-ligado: #D0BCFF;            /* o bloco ligado, o brilho, a ação, o sino */
+  --sis-ligado-nome: #381E72;       /* o nome no bloco ligado */
+  --sis-ligado-estado: #4F378B;     /* o estado no bloco ligado */
+  --sis-botao: #4A4458;             /* os botões do pedido */
+  --sis-botao-texto: #E8DEF8;
+  --sis-veu: rgba(0, 0, 0, 0.56);   /* o véu do pedido, igual nos dois temas */
+  --sis-sombra: 0 10px 28px rgba(0, 0, 0, 0.55), 0 2px 6px rgba(0, 0, 0, 0.45);
+
+  /* as medidas */
+  --sis-aviso-borda: 8px;           /* o recolhido a 8 das bordas */
+  --sis-aviso-topo: 36px;           /* e a 36 do topo */
+  --sis-cartao-canto: 24px;
+  --sis-cartao-respiro: 14px;
+  --sis-aberto-respiro: 14px 16px 10px 14px;
+  --sis-icone-do-app: 40px;         /* o ícone do app no recorte do celular, recolhido */
+  --sis-icone-do-app-aberto: 28px;  /* e aberto */
+  --sis-pilula-largura: 28px;  --sis-pilula-altura: 20px;  --sis-pilula-canto: 10px;
+  --sis-chevron: 14px;
+  --sis-titulo-tam: 15px;  --sis-titulo-linha: 20px;
+  --sis-texto-tam: 14px;   --sis-texto-linha: 20px;
+  --sis-app-tam: 12px;     --sis-app-linha: 16px;
+  --sis-titulo-aberto-tam: 16px;  --sis-titulo-aberto-linha: 22px;
+  --sis-aberto-recuo: 38px;         /* o título e o texto do aberto, da esquerda do cartão */
+  --sis-acao-recuo: 26px;           /* a ação, da esquerda do cartão */
+  --sis-acao-altura: 40px;  --sis-acao-respiro: 12px;
+  --sis-gaveta-respiro: 10px 16px 0 16px;
+  --sis-data-respiro: 0 4px;
+  --sis-bloco-altura: 64px;  --sis-bloco-canto: 20px;  --sis-bloco-icone: 20px;
+  --sis-bloco-nome-tam: 14px;  --sis-bloco-nome-linha: 18px;
+  --sis-bloco-estado-tam: 12px;  --sis-bloco-estado-linha: 16px;
+  --sis-brilho-altura: 44px;  --sis-brilho-canto: 22px;  --sis-brilho: 62%;  --sis-brilho-icone: 18px;
+  --sis-depois-do-brilho: 4px;
+  --sis-gaveta-botao-altura: 36px;  --sis-gaveta-botao-canto: 18px;
+  --sis-dialogo-largura: 312px;  --sis-dialogo-canto: 28px;  --sis-dialogo-respiro: 24px 24px 20px;
+  --sis-sino: 24px;
+  --sis-pergunta-tam: 20px;  --sis-pergunta-linha: 27px;
+  --sis-botao-altura: 48px;  --sis-botao-canto: 24px;  --sis-botao-tam: 15px;
+
+  /* o ícone pequeno na barra de status, ao lado da hora (folha 11): a barra escura, a clara e a tela sempre
+     ligada, cada uma com a hora e o ícone de 15 (o Android desenha a lona de 24 a 15), e o de 60, de perto, na
+     caixa de 76 · na escura, o branco; na clara, o preto a 60% (a opacidade da cor da barra multiplica a do
+     ícone); na sempre ligada, o branco sobre o preto · fixas: a barra não segue o tema do celular aqui, cada
+     uma é um caso */
+  --sis-barra-escura: #16131D;
+  --sis-barra-clara: #F4F2F7;
+  --sis-barra-sempre-ligada: #000000;
+  --sis-na-barra-branco: #FFFFFF;   /* o ícone e a hora na barra escura e na sempre ligada, e o ícone da folha 0 */
+  --sis-na-barra-preto: #000000;    /* o ícone e a hora na barra clara, a 60% */
+  --sis-na-barra-clara-opacidade: 0.6;
+  --sis-barra-largura: 150px;  --sis-barra-altura: 28px;  --sis-barra-canto: 8px;  --sis-barra-respiro: 0 12px;
+  --sis-hora-tam: 14px;
+  --sis-icone-na-barra: 15px;
+  --sis-de-perto: 76px;  --sis-icone-de-perto: 60px;
+}
+
+/* o claro do sistema (R-19): cada cor pelo par do Material 3 claro, papel por papel, como o teclado ·
+   o aviso no #F3EDF7 da folha 11, e o pedido no #ECE6F0 · o véu fica igual */
+[data-tema="claro"] {
+  --sis-gaveta: #FEF7FF;
+  --sis-cartao: #F3EDF7;
+  --sis-dialogo: #ECE6F0;
+  --sis-titulo: #1D1B20;
+  --sis-texto: #49454F;
+  --sis-pilula: #E6E0E9;
+  --sis-ligado: #6750A4;
+  --sis-ligado-nome: #FFFFFF;
+  --sis-ligado-estado: #EADDFF;
+  --sis-botao: #E8DEF8;
+  --sis-botao-texto: #1D192B;
+}
